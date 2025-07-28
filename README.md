@@ -67,6 +67,6 @@ kubectl apply -f nginx-pod.yaml
   ```bash
   ssh-copy-id user@<nginx-pod-ip>
   ```
-  (.images/3.png)
-  (.images/2.png)
+  ![Pod](.images/3.png)
+  ![ssh-key](.images/2.png)
   
