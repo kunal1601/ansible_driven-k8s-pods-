@@ -6,9 +6,7 @@ This project demonstrates how to run Ansible inside a Kubernetes pod to manage o
 
 ## 📸 Architecture Diagram
 
-![Ansible in Kubernetes using Minikube](C:\Users\Kunal\Downloads\project7.png)
-
-> 📝 Make sure the image file is placed at `./images/ansible-k8s-minikube.png`. You can change the path or filename as needed.
+![Ansible in Kubernetes using Minikube](./images/ansible-k8s-minikube.png)
 
 ---
 
@@ -32,5 +30,13 @@ This project demonstrates how to run Ansible inside a Kubernetes pod to manage o
 ---
 
 ## 📦 Folder Structure
+```
+.
+├── ansible-pod.yaml
+├── nginx-pod.yaml
+├── inventory.ini
+├── playbook.yml
+└── images/
+```
 
 
