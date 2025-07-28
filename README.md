@@ -69,4 +69,44 @@ kubectl apply -f nginx-pod.yaml
   ```
   ![Pod](images/3.png)
   ![ssh-key](images/2.png)
-  
+
+- Inside the Nginx Pod:
+    - kubectl exec -it nginx-pod -- bash
+```bash
+apt install vim
+vi /etc/ssh/sshd_config
+#inside this 
+PermitRootLogin yes
+PasswordAuthentication Yes
+```
+![ssh](images/5.png)
+
+- last step
+```bash
+passwd    # Set a root password like root123
+service ssh restart
+```
+![ssh](images/6.png) 
+
+ 🔹 Step 5: Install Ansible Inside Pod 
+ ```bash
+ apt update
+ apt install -y python3-pip ssh
+ pip3 install ansible
+```
+🔹 Step 6: Run Playbook
+inventory.ini
+```bash
+[target]
+<nginx-pod-ip> ansible_user=root ansible_ssh_private_key_file=~/.ssh/id_rsa
+```
+```bash
+ansible-playbook -i inventory.ini playbook.yml
+```
+![playbook-run](images/4.png)
+
+Final step
+- Check curl command install in target node or not(nginx-pod)
+![output](images/7.png)
+
+
