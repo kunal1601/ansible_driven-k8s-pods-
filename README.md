@@ -38,5 +38,35 @@ This project demonstrates how to run Ansible inside a Kubernetes pod to manage o
 ├── playbook.yml
 └── images/
 ```
+---
 
+## 🧱 Step-by-Step Setup
 
+### 🔹 Step 1: Start Minikube
+
+```bash
+minikube start
+```
+🔹 Step 2: Deploy the Ansible Pod
+```bash
+kubectl apply -f ansible-pod.yaml
+```
+🔹 Step 3: Deploy the Target Pod with SSH & Nginx
+```bash
+kubectl apply -f nginx-pod.yaml
+```
+(./images/1.png)
+
+🔹 Step 4: Setup SSH Between Pods
+- kubectl exec -it ansible-pod -- bash
+- Generate SSH key:
+  ```bash
+  ssh-keygen
+  ```
+- Copy public key to nginx pod:
+  ```bash
+  ssh-copy-id user@<nginx-pod-ip>
+  ```
+  (.images/3.png)
+  (.images/2.png)
+  
