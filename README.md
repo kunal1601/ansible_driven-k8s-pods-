@@ -55,7 +55,7 @@ kubectl apply -f ansible-pod.yaml
 ```bash
 kubectl apply -f nginx-pod.yaml
 ```
-(./images/1.png)
+ ![Pod](./images/1.png)
 
 🔹 Step 4: Setup SSH Between Pods
 - kubectl exec -it ansible-pod -- bash
